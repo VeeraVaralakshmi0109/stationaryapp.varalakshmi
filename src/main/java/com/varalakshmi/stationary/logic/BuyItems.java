@@ -4,19 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.varalakshmi.stationary.Stationary;
 import com.varalakshmi.stationary.dao.ItemInsertion;
 import com.varalakshmi.stationary.dao.ItemPriceFinder;
-import com.varalakshmi.stationary.dao.StationaryDao;
+import com.varalakshmi.stationary.dao.StationaryListDao;
 
 
 public class BuyItems {
+
+	private static Logger log = LogManager.getLogger(BuyItems.class);
 	static List<Integer> chocId;
 
 	static Scanner sc=new Scanner(System.in);
 	public static void findItems() throws ClassNotFoundException, SQLException
 	{
-	List<Stationary> list=StationaryDao.allProducts();
+		List<Stationary> list = StationaryListDao.allProducts();
 	for(Stationary stationary:list)
 	{
 	System.out.println(stationary.getId()+"  "+stationary.getName()+"  "+stationary.getBrandName()+"  "+stationary.getPrice());
@@ -37,9 +42,9 @@ public class BuyItems {
 	int price=ItemPriceFinder.priceFinder(i);
 	total=total+price;
 	}
-	System.out.println("Your total price is "+ total);
-	System.out.println("1) Buy more items");
-	System.out.println("2) continue to payment");
+	log.info("Your total price is " + total);
+	log.info("1) Buy more items");
+	log.info("2) continue to payment");
 	int option=sc.nextInt();
 	if(option==1)
 	{
@@ -63,10 +68,10 @@ public class BuyItems {
 	}
 	public static int payment(int total)
 	{
-	System.out.println("Enter your upi id");
+		log.info("Enter your upi id");
 	String upi=sc.next();
-	System.out.println("Your total price is : "+total);
-	System.out.println("Enter amount to pay");
+		log.info("Your total price is : " + total);
+		log.info("Enter amount to pay");
 	int price=sc.nextInt();
 	if(price ==total)
 	{

@@ -11,7 +11,7 @@ public class UserValidator {
 
 		if (user.getName() == null) {
 			throw new Exception("Invalid Name");
-		} else if (user.getEmail() == null) {
+		} else if (user.getEmail() == null && !(user.getEmail().contains("@gmail.com"))) {
 			throw new Exception("Invalid Email");
 		} else if (user.getPassword() == null) {
 			throw new Exception("Invalid Password");
@@ -19,10 +19,10 @@ public class UserValidator {
 			throw new Exception("Password must have minimum 8 characters");
 		}
 
-		else if (user.getContact() == null) {
-			throw new Exception("Invalid Contact");
+		else if (user.getContact() == null && (user.getContact()).length() != 10) {
+			throw new Exception("Invalid Contact---->Should have 10 number");
 		}
-		System.out.println("Validation passed");
+		System.out.println("Registered Successfully");
 
 	}
 

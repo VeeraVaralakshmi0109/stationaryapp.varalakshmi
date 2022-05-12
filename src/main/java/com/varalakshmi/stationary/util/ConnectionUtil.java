@@ -7,9 +7,9 @@ import java.sql.Statement;
 
 public class ConnectionUtil {
 	public static Connection getConnection() throws ClassNotFoundException {
-		String url = "jdbc:mysql://101.53.133.59:3306/revature_training_db";
-		String username = "rev_user";
-		String password = "rev_user";
+		String url = "jdbc:mysql://training-db.ck1ayq0lncmp.ap-south-1.rds.amazonaws.com:3306/varalakshmi_db";
+		String username = "varalakshmi";
+		String password = "varalakshmi";
 		Connection connection = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");

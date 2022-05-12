@@ -17,8 +17,8 @@ public class ItemInsertion {
 		String query = "insert into varalaksmi_statinary_transaction(User_id,product_id,Purchased_on)values(?,?,?)";
 		statement = connection.prepareStatement(query);
 		statement.setInt(1, 1);
-		statement.setInt(2, id);
-		statement.setDate(3, date);
+		statement.setInt(1, id);
+		statement.setDate(1, date);
 		int rows = statement.executeUpdate();
 	}
 

@@ -2,17 +2,23 @@ package com.varalakshmi.stationary.model;
 
 import java.util.Scanner;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class UserTest {
+	private static Logger log = LogManager.getLogger(UserTest.class);
+
 	public static void main(String[] args) {
 
-		System.out.println("name");
+
+		log.info("name");
 		Scanner sc = new Scanner(System.in);
 		String name = sc.next();
-		System.out.println("email");
+		log.info("email");
 		String email = sc.next();
-		System.out.println("password");
+		log.info("password");
 		String password = sc.next();
-		System.out.println("contact");
+		log.info("contact");
 		String contact = sc.next();
 
 		User user = new User();
@@ -20,8 +26,8 @@ public class UserTest {
 		user.setEmail(email);
 		user.setPassword(password);
 		user.setContact(contact);
-		System.out.println(user);
-		// log.debug(user)
+		// System.out.println(user);
+		log.info(user);
 
 	}
 
