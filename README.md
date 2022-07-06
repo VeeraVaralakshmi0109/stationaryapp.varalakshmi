@@ -11,8 +11,7 @@ Run mvn build to build the project. The build artifacts will be stored in the .m
 ## Technologies Used
 
 * Java 16
-
-## Features
+gt
 
 * List all items in Stationary App.
 * User registration.
